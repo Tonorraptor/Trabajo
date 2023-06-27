@@ -21,10 +21,11 @@ public class Enemy : MonoBehaviour
         if(collision.gameObject.CompareTag("Player"))
         {
             Destroy(collision.gameObject);
+            SceneManager.LoadScene("Derrota 1");
         }
     }
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene("Derrota");
+        Destroy(gameObject);
     }
 }

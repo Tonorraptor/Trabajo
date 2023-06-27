@@ -33,7 +33,7 @@ public class ScoreText : MonoBehaviour
     {
         if (score == 100)
         {
-            SceneManager.LoadScene("Victoria");
+            SceneManager.LoadScene("Nivel2");
         }
     }
 }
