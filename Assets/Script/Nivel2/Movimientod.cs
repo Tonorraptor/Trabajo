@@ -37,5 +37,9 @@ public class Movimientod : MonoBehaviour
         if (collision.gameObject.CompareTag("GameOver")){
             SceneManager.LoadScene("Derrota");
         }
+        if (collision.gameObject.CompareTag("ok"))
+        {
+            SceneManager.LoadScene("Victoria");
+        }
     }
 }
