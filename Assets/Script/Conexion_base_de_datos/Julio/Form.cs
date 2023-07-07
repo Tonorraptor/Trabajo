@@ -6,26 +6,36 @@ using TMPro;
 using UnityEngine.UI;
 public class Form : MonoBehaviour
 {
-    [SerializeField] private TMP_InputField nameInput;
-    [SerializeField] private TMP_InputField passInput;
-    [SerializeField] private TextMeshProUGUI resultT;
-    [SerializeField] private Button execute;
+    [SerializeField] private TMP_InputField nameInput = null;
+    [SerializeField] private TMP_InputField passInput = null;
+    [SerializeField] private TMP_InputField enterPassInput = null;
+    [SerializeField] private TextMeshProUGUI resultT = null;
+    [SerializeField] private Button execute = null ;
     private ConectForm cForm;
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         cForm = GetComponent<ConectForm>();
-        execute.onClick.AddListener(()=>
-             cForm.InsertPlayerAcept(
-                string.Format (nameInput.text),
-                string.Format(passInput.text),
-                onCompleted)
-                );
     }
 
-    public void onCompleted(string result)
+    public void onCompleted()
     {
-        result = "Se registrop con exito";
-        resultT.text = result;
+        if(nameInput.text=="" || passInput.text == "")
+        {
+            resultT.text = "Llenar campos";
+            return;
+        }
+        if(passInput.text== enterPassInput.text)
+        {
+            resultT.text = "Procesando.......";
+            cForm.InsertPlayerAcept(nameInput.text, passInput.text, delegate (FormData data)
+            {
+                resultT.text = data.messege;
+            });
+        }
+        else
+        {
+            resultT.text = "Error";
+        }
     }
 }

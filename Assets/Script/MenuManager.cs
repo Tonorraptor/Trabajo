@@ -26,5 +26,12 @@ public class MenuManager : MonoBehaviour
     {
         Application.Quit();
     }
-
+    public void LogIn()
+    {
+        SceneManager.LoadScene("Login");
+    }
+    public void Form()
+    {
+        SceneManager.LoadScene("Crear");
+    }
 }

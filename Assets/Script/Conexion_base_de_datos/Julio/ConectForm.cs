@@ -8,7 +8,7 @@ using UnityEngine.Networking;
 public class ConectForm : MonoBehaviour
 {
 
-    IEnumerator InsertPlayer(string playerName, string playerPass, Action<string> callback)
+    IEnumerator InsertPlayer(string playerName, string playerPass, Action<FormData> callback)
     {
         WWWForm form = new WWWForm();
         form.AddField("playername", playerName);
@@ -21,15 +21,16 @@ public class ConectForm : MonoBehaviour
             if (www.result != UnityWebRequest.Result.Success)
             {
                 Debug.Log(www.error);
+                Debug.Log(www.error);
             }
             else
             {
-                callback?.Invoke(www.downloadHandler.text);
+                callback(JsonUtility.FromJson<FormData>(www.downloadHandler.text));
             }
         }
     }
 
-    public void InsertPlayerAcept(string playerName, string playerPass, Action<string> callback)
+    public void InsertPlayerAcept(string playerName, string playerPass, Action<FormData> callback)
     {
         StartCoroutine(InsertPlayer(playerName, playerPass, callback));
     }
