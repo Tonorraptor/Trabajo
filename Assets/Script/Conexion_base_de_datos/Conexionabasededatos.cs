@@ -13,7 +13,7 @@ public class Conexionabasededatos : MonoBehaviour
 
     IEnumerator SendGetRankingRequest(Action<ArrayData> callback)
     {
-        using (UnityWebRequest www = UnityWebRequest.Get("http://localhost/progra/nombredelcodigo.php%22"))
+        using (UnityWebRequest www = UnityWebRequest.Get("http://localhost/progra/Insert_Menu.php"))
         {
             yield return www.SendWebRequest();
 
