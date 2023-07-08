@@ -35,6 +35,7 @@ public class Movimientod : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("GameOver")){
+            SendScoreController.GetInstance().SendScore(LoginView.usuario, Puntajetext.score, "Level 2", delegate (FormData data) { });
             SceneManager.LoadScene("Derrota");
         }
         if (collision.gameObject.CompareTag("ok"))

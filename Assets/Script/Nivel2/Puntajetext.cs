@@ -5,12 +5,13 @@ using TMPro;
 
 public class Puntajetext : MonoBehaviour
 {
-    private float score;
+    public static int score;
     private TextMeshProUGUI txtPuint;
 
     // Start is called before the first frame update
     void Start()
     {
+        score = 0;
         txtPuint = GetComponent<TextMeshProUGUI>();
     }
 
@@ -19,7 +20,7 @@ public class Puntajetext : MonoBehaviour
     {
         txtPuint.text = "Score: " + score;
     }
-    public void Suma(float scoreValue)
+    public void Suma(int scoreValue)
     {
         score += scoreValue;
     }

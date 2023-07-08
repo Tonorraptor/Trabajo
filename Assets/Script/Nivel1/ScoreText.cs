@@ -31,7 +31,7 @@ public class ScoreText : MonoBehaviour
     }
     public void Condition()
     {
-        if (score == 20)
+        if (score == 2)
         {
             SceneManager.LoadScene("Nivel2");
         }
