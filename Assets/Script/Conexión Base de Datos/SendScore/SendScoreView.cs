@@ -19,7 +19,8 @@ public class SendScoreView : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        getScoreText.text = $"{ScoreText.score}";    
+        getScoreText.text = $"{ScoreText.score}";
+        getPlayerText.text = $"{LoginView.usuario}";
     }
 
     void Update()

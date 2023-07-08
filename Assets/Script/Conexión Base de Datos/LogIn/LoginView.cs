@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class LoginView : MonoBehaviour
 {
+    public static string usuario;
     [SerializeField] private TMP_InputField nameInput = null;
     [SerializeField] private TMP_InputField passInput = null;
     [SerializeField] private TextMeshProUGUI resultT = null;
@@ -32,6 +33,7 @@ public class LoginView : MonoBehaviour
             {
                 resultT.text = data.message;
                 SceneManager.LoadScene("MenuPrincipal");
+                usuario=nameInput.text;
             }
             else
             {
