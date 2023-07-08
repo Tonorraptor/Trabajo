@@ -466,7 +466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 856f4af7b8b67fe468000de7dd997823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  getPlayerText: {fileID: 0}
+  getPlayerText: {fileID: 692119799}
   getScoreText: {fileID: 867571710}
 --- !u!1 &563749702
 GameObject:
