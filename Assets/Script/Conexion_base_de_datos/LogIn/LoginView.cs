@@ -28,8 +28,15 @@ public class LoginView : MonoBehaviour
         resultT.text = "Procesando.......";
         login.LogEnter(nameInput.text, passInput.text, delegate (LogInData data)
         {
-            resultT.text = data.message;
-            SceneManager.LoadScene("MenuPrincipal");
+            if (data.done == true)
+            {
+                resultT.text = data.message;
+                SceneManager.LoadScene("MenuPrincipal");
+            }
+            else
+            {
+                resultT.text = data.message;
+            }
         });
     }
 }
