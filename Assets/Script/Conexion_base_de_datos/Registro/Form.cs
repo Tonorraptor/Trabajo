@@ -30,12 +30,18 @@ public class Form : MonoBehaviour
             resultT.text = "Procesando.......";
             cForm.InsertPlayerAcept(nameInput.text, passInput.text, delegate (FormData data)
             {
-                resultT.text = data.messege;
+                resultT.text = data.message;
             });
         }
         else
         {
             resultT.text = "Error";
         }
+    }
+    public void buttonReset()
+    {
+        nameInput.text = "";
+        passInput.text = "";
+        resultT.text = "";
     }
 }
