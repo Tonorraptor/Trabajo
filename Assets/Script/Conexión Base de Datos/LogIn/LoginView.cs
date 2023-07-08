@@ -18,7 +18,6 @@ public class LoginView : MonoBehaviour
     private void Awake()
     {
         login = GetComponent<ConnectLogin>();
-        DontDestroyOnLoad(nameUsu);
     }
 
     public void OnCompleted()
