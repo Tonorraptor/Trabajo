@@ -7,9 +7,9 @@ using UnityEngine.Networking;
 public class SendScoreController : MonoBehaviour
 {
     private static SendScoreController instance;
-    public void SendScore(string username, int score, Action<FormData> callback)
+    public void SendScore(string username, int score, string levelname, Action<FormData> callback)
     {
-        StartCoroutine(SendScoreRequest(username, score, callback));
+        StartCoroutine(SendScoreRequest(username, score, levelname, callback));
     }
     public static SendScoreController GetInstance()
     {
@@ -20,12 +20,12 @@ public class SendScoreController : MonoBehaviour
         instance = this;
     }
 
-    IEnumerator SendScoreRequest(string username, int score,Action<FormData> callback)
+    IEnumerator SendScoreRequest(string username, int score, string levelname, Action<FormData> callback)
     {
         WWWForm form = new WWWForm();
-        form.AddField("playername", "aaa");
+        form.AddField("playername", username);
         form.AddField("score", score);
-        form.AddField("levelname", "Level 1");
+        form.AddField("levelname", levelname);
         
         using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/progra/insert_score.php", form))
         {

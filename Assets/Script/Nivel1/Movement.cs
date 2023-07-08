@@ -56,7 +56,7 @@ public class Movement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Meteorito"))
         {                     
-            SendScoreController.GetInstance().SendScore("usuario", 10, delegate (FormData data){ });            
+            SendScoreController.GetInstance().SendScore(LoginView.usuario, ScoreText.score, "Level 1", delegate (FormData data){ });            
             Destroy(collision.gameObject);
             SceneManager.LoadScene("Derrota 1");
 
