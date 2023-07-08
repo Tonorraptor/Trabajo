@@ -1715,6 +1715,7 @@ MonoBehaviour:
   nameInput: {fileID: 56621194}
   passInput: {fileID: 1278350133}
   resultT: {fileID: 1827522178}
+  nameUsu: {fileID: 0}
 --- !u!1 &1596507093
 GameObject:
   m_ObjectHideFlags: 0
