@@ -6,12 +6,12 @@ using UnityEngine.Networking;
 
 public class GetScoreController : MonoBehaviour
 {
-    public void GetScore(string username,string levelname,Action<GetScoreArrayData> callback)
+    public void GetScore(string username,Action<GetScoreArrayData> callback)
     {
-        StartCoroutine(GetScoreRequest(username, levelname, callback));
+        StartCoroutine(GetScoreRequest(username, callback));
     }
 
-    IEnumerator GetScoreRequest(string username, string levelname,Action<GetScoreArrayData> callback)
+    IEnumerator GetScoreRequest(string username, Action<GetScoreArrayData> callback)
     {
         WWWForm form = new WWWForm();
         form.AddField("username", username);        

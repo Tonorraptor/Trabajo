@@ -14,9 +14,6 @@ public class GetScoreView : MonoBehaviour
     [SerializeField]
     private Button executeButton;
 
-    [SerializeField]
-    private string levelname;
-
 
     private GetScoreController controller;
     // Start is called before the first frame update
@@ -26,7 +23,6 @@ public class GetScoreView : MonoBehaviour
         executeButton.onClick.AddListener(() =>
             controller.GetScore(
                 usernameInputField.text,
-                levelname,
                 OnCompleted)
             );
     }

@@ -9,8 +9,7 @@ public class Form : MonoBehaviour
     [SerializeField] private TMP_InputField nameInput = null;
     [SerializeField] private TMP_InputField passInput = null;
     [SerializeField] private TMP_InputField enterPassInput = null;
-    [SerializeField] private TextMeshProUGUI resultT = null;
-    [SerializeField] private Button execute = null ;
+    [SerializeField] private TextMeshProUGUI resultT = null;   
     private ConectForm cForm;
     // Start is called before the first frame update
     private void Awake()
