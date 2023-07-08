@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class ScoreText : MonoBehaviour
 {
-    private int score;
+    public int score;
     public float time;
     public float maxtime;
     private TextMeshProUGUI scoreTextMesh;

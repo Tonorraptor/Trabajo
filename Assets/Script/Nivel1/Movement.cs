@@ -24,7 +24,6 @@ public class Movement : MonoBehaviour
     {
         PlayerMovement();
         EnemyMechanic();
-        ShoterController();
     }
     public void PlayerMovement()
     {
@@ -48,14 +47,5 @@ public class Movement : MonoBehaviour
         }
         time -= Time.deltaTime;
     }
-    public void ShoterController()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            GameObject timeBullet = Instantiate(bullet, iPoint.transform.position, iPoint.transform.rotation);
-            Rigidbody rgBullet = timeBullet.GetComponent<Rigidbody>();
-            rgBullet.AddForce(transform.up * buelletSpeed);
-            Destroy(timeBullet, 5.0F);
-        }
-    }
+    
 }
