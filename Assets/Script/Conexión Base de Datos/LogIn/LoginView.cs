@@ -13,8 +13,6 @@ public class LoginView : MonoBehaviour
     [SerializeField] private TextMeshProUGUI resultT = null;
     private ConnectLogin login;
 
-    [SerializeField] private TextMeshProUGUI nameUsu;
-
     private void Awake()
     {
         login = GetComponent<ConnectLogin>();
@@ -34,16 +32,11 @@ public class LoginView : MonoBehaviour
             {
                 resultT.text = data.message;
                 SceneManager.LoadScene("MenuPrincipal");
-                DatoName();
             }
             else
             {
                 resultT.text = data.message;
             }
         });
-    }
-    public void DatoName()
-    {
-        nameUsu.text = nameInput.text;
     }
 }
