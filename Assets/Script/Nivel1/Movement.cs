@@ -42,9 +42,9 @@ public class Movement : MonoBehaviour
         if (time <= 0)
         {
             time = maxTime;
-            int positionEnemy = Random.Range(-13, 6);
-            GameObject timeEnemy = Instantiate(enemy, new Vector3(positionEnemy, 18, 0), Quaternion.identity);
-            Destroy(timeEnemy, 4);
+            int positionEnemy = Random.Range(-12, 8);
+            GameObject timeEnemy = Instantiate(enemy, new Vector3(positionEnemy, 20, 0), Quaternion.identity);
+            Destroy(timeEnemy, 2);
         }
         time -= Time.deltaTime;
     }
