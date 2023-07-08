@@ -6,16 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class ScoreText : MonoBehaviour
 {
-    public int score;
+    public static int score;
     public float time;
     public float maxtime;
     public TextMeshProUGUI scoreTextMesh;
     // Start is called before the first frame update
     void Start()
     {
+        score = 0;
         scoreTextMesh = GetComponent<TextMeshProUGUI>();
     }
-
     // Update is called once per frame
     void Update()
     {
